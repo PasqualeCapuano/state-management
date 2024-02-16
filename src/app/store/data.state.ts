@@ -1,11 +1,10 @@
 import {Action, Selector, State, StateContext} from '@ngxs/store';
 import {ChartType, Data, DataForm, DataReset} from './data.actions';
 import {patch} from '@ngxs/store/operators';
+import { DataStateModel } from './data.model';
 
-export class DataStateModel {
-  dataList: any[] = [];
-  chartType: string = '';
-}
+
+
 
 @State<DataStateModel>({
   name: 'data',
