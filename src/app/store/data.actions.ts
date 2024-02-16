@@ -13,3 +13,8 @@ export class DataReset {
   public static type = 'DataReset';
   constructor(public payload: {}) {}
 }
+
+export class ChartType {
+  public static type = 'ChartType';
+  constructor(public payload: string) {}
+}

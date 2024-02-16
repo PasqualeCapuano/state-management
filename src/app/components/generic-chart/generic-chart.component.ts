@@ -4,15 +4,17 @@ import { Observable, Subscription } from 'rxjs';
 import { DataState } from 'src/app/store/data.state';
 
 @Component({
-  selector: 'app-barChart',
-  templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.css']
+  selector: 'app-generic-chart',
+  templateUrl: './generic-chart.component.html',
+  styleUrls: ['./generic-chart.component.css']
 })
-export class ChartComponent implements OnInit {
+export class GenericChartComponent implements OnInit {
   subscribed: Subscription | undefined;
   dataSource: string[] = [];
+  chartType: {} = {};
 
   @Select(DataState.getAnimalList) dataLista$?: Observable<[]>;
+  @Select(DataState.getChartType) chartType$?: Observable<string>;
 
   constructor() { }
 
@@ -20,6 +22,9 @@ export class ChartComponent implements OnInit {
     this.subscribed = this.dataLista$?.subscribe((res) => {
       this.dataSource = [...res];
     })
+    this.subscribed = this.chartType$?.subscribe((res) => {
+      this.chartType = res;
+    });
   }
 
   ngOnDestroy(){

@@ -1,15 +1,17 @@
 import {Action, Selector, State, StateContext} from '@ngxs/store';
-import {Data, DataForm, DataReset} from './data.actions';
+import {ChartType, Data, DataForm, DataReset} from './data.actions';
 import {patch} from '@ngxs/store/operators';
 
 export class DataStateModel {
   dataList: any[] = [];
+  chartType: string = '';
 }
 
 @State<DataStateModel>({
   name: 'data',
   defaults: {
     dataList: [],
+    chartType: 'bar'
   }
 })
 export class DataState {
@@ -19,6 +21,11 @@ export class DataState {
   @Selector()
   static getAnimalList(state: DataStateModel): {} {
     return state.dataList;
+  }
+
+  @Selector()
+  static getChartType(state: DataStateModel): {} {
+    return state.chartType;
   }
   //è l'azione che viene dispatchata dal componente
   @Action(DataForm)
@@ -42,6 +49,15 @@ export class DataState {
     ctx.setState(
       patch({
         dataList: newObj
+      })
+    );
+  }
+
+  @Action(ChartType)
+  public setChartType(ctx: StateContext<DataStateModel>, payload: ChartType) {
+    ctx.setState(
+      patch({
+        chartType: payload.payload
       })
     );
   }

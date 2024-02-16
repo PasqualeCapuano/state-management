@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { Data, DataForm, DataReset } from '../../store/data.actions';
+import { ChartType, Data, DataForm, DataReset } from '../../store/data.actions';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -43,14 +43,11 @@ export class HomeComponent implements OnInit {
   }
 
   onItemClick(e: any) {
+
     if (e.itemData === 'Bar Chart') {
-      this.chartOne = true;
-      this.chartTwo = false;
-      this.chartThree = false;
+      this.store.dispatch(new ChartType('bar'));
     } else if (e.itemData === 'Line Chart') {
-      this.chartOne = false;
-      this.chartTwo = true;
-      this.chartThree = false;
+      this.store.dispatch(new ChartType('line'));
     } 
   }
 }

@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { ChartComponent } from './components/BarChart/chart.component';
 import { TableComponent } from './components/table/table.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -56,7 +55,7 @@ import {
   
 } from 'devextreme-angular';
 import { environment } from 'src/environments/environment';
-import { LineChartComponent } from './components/line-chart/line-chart.component';
+import { GenericChartComponent } from './components/generic-chart/generic-chart.component';
 export const DxModules = [
   DxButtonModule,
   DxTextBoxModule,
@@ -102,9 +101,8 @@ export const DxModules = [
   declarations: [
     AppComponent,
     HomeComponent,
-    ChartComponent,
     TableComponent,
-    LineChartComponent
+    GenericChartComponent
   ],
   imports: [
     ...DxModules,
