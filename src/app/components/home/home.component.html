@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row d-flex align-items-start justify-content-center">
+    <div class="col-5 card m-2">
+      <div class="row d-flex">
+        <div>
+          <h1>Form</h1>
+          <form (onSubmit)="addDataForm()" [formGroup]="form">
+            <div class="form-group">
+              <label for="id">ID</label>
+              <input 
+                readonly
+                type="text"
+                formControlName="id"
+                class="form-control"
+                placeholder="{{n}}"
+                id="id"
+              />
+            </div>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                formControlName="name"
+                class="form-control"
+                id="name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input
+                type="number"
+                formControlName="age"
+                class="form-control"
+                id="age"
+              />
+            </div>
+            <button
+              type="submit"
+              (click)="addDataForm()"
+              class="btn btn-warning"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-5 card m-2">
+      <!--  -->
+      <dx-drop-down-button
+        text="Pick your chart"
+        [items]="tabs"
+        (onItemClick)="onItemClick($event)"
+      ></dx-drop-down-button>
+
+      <!--  -->
+      <h1>Data Chart</h1>
+      <app-barChart *ngIf="chartOne"></app-barChart>
+      <app-lineChart *ngIf="chartTwo"></app-lineChart>
+    </div>
+  </div>
+  <div class="row d-flex align-items-start justify-content-center">
+    <div class="card m-2">
+      <div class="d-flex justify-content-around">
+        <h1>Data grid</h1>
+        <button class="btn btn-warning" (click)="resetData()">Reset</button>
+      </div>
+      <app-table></app-table>
+    </div>
+  </div>
+</div>

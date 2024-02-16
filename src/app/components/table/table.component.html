@@ -1,0 +1,17 @@
+<dx-data-grid
+  id="gridContainer"
+  [dataSource]="dataSource"
+  [showBorders]="true"
+>
+  <dxo-scrolling rowRenderingMode="virtual"> </dxo-scrolling>
+  <dxo-paging [pageSize]="10"> </dxo-paging>
+  <dxo-pager
+    [visible]="true"
+    [allowedPageSizes]="allowedPageSizes"
+    [showPageSizeSelector]="showPageSizeSelector"
+    [showInfo]="showInfo"
+  >
+  </dxo-pager>
+
+  <dxi-column *ngFor="let c of columns" dataField="{{c}}"></dxi-column>
+</dx-data-grid>

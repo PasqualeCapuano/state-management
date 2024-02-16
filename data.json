@@ -1,0 +1,27 @@
+[
+	{
+        "id": "1",
+		"color": "red",
+		"value": "#f00",
+        "hex": "#f00"
+	},
+    {
+        "id": "2",
+		"color": "red",
+		"value": "#f00",
+        "hex": "#f00"
+	},
+    {
+        "id": "3",
+		"color": "red",
+		"value": "#f00",
+        "hex": "#f00"
+	},
+    {
+        "id": "4",
+		"color": "red",
+		"value": "#f00",
+        "hex": "#f00"
+    }
+	
+]
