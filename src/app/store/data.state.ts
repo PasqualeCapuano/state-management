@@ -1,5 +1,5 @@
 import {Action, Selector, State, StateContext} from '@ngxs/store';
-import {ChartType, Data, DataForm, DataReset} from './data.actions';
+import {ChartType, Data, DataForm, DataReset, Database} from './data.actions';
 import {patch} from '@ngxs/store/operators';
 import { DataStateModel } from './data.model';
 
@@ -18,7 +18,7 @@ export class DataState {
   
   //serve per selezionare il valore da richiamare dallo STORE
   @Selector()
-  static getAnimalList(state: DataStateModel): {} {
+  static getDataList(state: DataStateModel): {} {
     return state.dataList;
   }
 
@@ -40,6 +40,19 @@ export class DataState {
       })
     );
   }
+
+  @Action(Database)
+  public getData(ctx: StateContext<DataStateModel>, payload: Database) {
+    const newObj = payload.payload ;
+  
+    
+    ctx.setState(
+      patch({
+        dataList: newObj
+      })
+    );
+  }
+
 
   @Action(DataReset)
   public reset(ctx: StateContext<DataStateModel>, payload: DataReset) {

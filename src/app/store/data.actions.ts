@@ -3,6 +3,11 @@ export class Data {
   constructor(public payload: {}) {}
 }
 
+export class Database {
+  public static type = 'Database';
+  constructor(public payload: any) {}
+}
+
 export class DataForm {
   public static type = 'DataForm';
   constructor(public payload: {}) {}

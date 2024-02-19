@@ -18,7 +18,7 @@ export class TableComponent implements OnInit {
   dataSource: [] = [];
   columns: [] = [];
 
-  @Select(DataState.getAnimalList) dataLista$?: Observable<[]>;
+  @Select(DataState.getDataList) dataLista$?: Observable<[]>;
 
   constructor() {}
 

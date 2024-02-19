@@ -10,6 +10,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsModule} from '@ngxs/store';
 import {DataState} from './store/data.state';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -109,6 +110,7 @@ export const DxModules = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     NgxsModule.forRoot([DataState], {
       developmentMode: !environment.production

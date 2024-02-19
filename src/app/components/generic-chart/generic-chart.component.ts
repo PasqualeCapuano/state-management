@@ -13,7 +13,7 @@ export class GenericChartComponent implements OnInit {
   dataSource: string[] = [];
   chartType: {} = {};
 
-  @Select(DataState.getAnimalList) dataLista$?: Observable<[]>;
+  @Select(DataState.getDataList) dataLista$?: Observable<[]>;
   @Select(DataState.getChartType) chartType$?: Observable<string>;
 
   constructor() { }
