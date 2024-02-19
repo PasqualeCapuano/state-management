@@ -18,9 +18,8 @@ export class DatabaseService {
     return this.http.post(`${this.apiUrl}`, data);
   }
 
-  deleteData() {
-    return this.http.delete<any>(`${this.apiUrl}/data`);
+  deleteData(id: number) {
+    return this.http.delete<any>(`${this.apiUrl}/data/${id}`);
   }
-  
 
 }

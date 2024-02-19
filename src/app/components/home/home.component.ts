@@ -69,7 +69,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   resetData() {
-    this.http.deleteData().subscribe(() => {});
     //this.store.dispatch(new DataReset([]));
     //this.form.reset();
   }
